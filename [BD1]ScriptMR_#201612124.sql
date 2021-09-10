@@ -1,17 +1,30 @@
-
-
-
+drop table pais;
+drop table ciudad;
+drop table Direccion;
 drop table Cliente;
+drop table Tienda;
+drop table Empleado;
+drop table Encargado_Tienda;
+drop table Actor;
+drop table Clasificacion;
+drop table Lenguaje;
+drop table Categoria;
+drop table Pelicula;
+drop table Actor_Pelicula;
+drop table Categoria_Pelicula;
+drop table Lenguaje_Pelicula;
+drop table Renta;
+drop table Renta_Pelicula;
 
 CREATE TABLE Pais(
-    id_pais integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_pais integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY ,
     nombre varchar(50) unique not null
 );
 
 CREATE TABLE Ciudad(
     id_ciudad integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nombre varchar(50) unique not null,
-    id_pais integer,
+    id_pais integer not null,
     FOREIGN KEY (id_pais) REFERENCES Pais(id_pais)
 );
 
@@ -24,25 +37,28 @@ CREATE TABLE Direccion(
 );
 
 CREATE TABLE Cliente(
-    id_cliente integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_cliente integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar(50),
     apellido varchar(50),
     correo varchar(50),
     fecha varchar(50),
     activo varchar(50),
+    tienda_favorita varchar(50),
     id_direccion integer,
     FOREIGN KEY (id_direccion) REFERENCES Direccion(id_direccion)
 );
 
+
+
 CREATE TABLE Tienda(
-    id_tienda integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_tienda integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar(50),
     id_direccion integer,
     FOREIGN KEY (id_direccion) REFERENCES Direccion(id_direccion)
 );
 
 CREATE TABLE Empleado(
-    id_empleado integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_empleado integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar(50),
     apellido varchar(50),
     correo varchar(50),
@@ -64,35 +80,35 @@ CREATE TABLE Encargado_Tienda(
 );
 
 CREATE TABLE Actor(
-    id_actor integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_actor integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar(50),
     apeliido varchar (50)
 );
 
 CREATE TABLE Clasificacion(
-    id_clasificacion integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_clasificacion integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     tipo varchar(50) unique
 );
 
 CREATE TABLE Lenguaje(
-    id_lenguaje integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_lenguaje integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     nombre varchar(50) unique not null
 );
 
 CREATE TABLE Categoria(
-    id_categoria integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_categoria integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     descripcion varchar(100)
 );
 
 CREATE TABLE Pelicula(
-    id_pelicula integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_pelicula integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     titulo varchar(50),
     descripcion varchar (200),
     anio_lanzamiento varchar(10),
     cant_dias_renta INTEGER not null,
-    costo_renta float not null,
+    costo_renta number(6,2) not null,
     duracion integer,
-    costo_danio float not null,
+    costo_danio number(6,2) not null,
     id_clasificacion integer not null,
     FOREIGN KEY (id_clasificacion) REFERENCES Clasificacion(id_clasificacion)
 );
@@ -122,7 +138,7 @@ CREATE TABLE Lenguaje_Pelicula(
 );
 
 CREATE TABLE Renta(
-    id_renta integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    id_renta integer GENERATED ALWAYS AS IDENTITY(START WITH 1 INCREMENT BY 1) PRIMARY KEY,
     titulo varchar(50),
     fecha_renta VARCHAR(50),
 	fecha_devuelta VARCHAR(50),
@@ -137,8 +153,7 @@ CREATE TABLE Renta(
 
 CREATE TABLE Renta_Pelicula(
     id_renta_pelicula integer GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    cantidad integer not null,
-    precio float not null,
+    precio number(6,2) not null,
     id_renta integer not null,
     id_pelicula integer not null,
     FOREIGN KEY (id_renta) REFERENCES Renta(id_renta),

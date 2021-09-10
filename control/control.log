@@ -1,0 +1,246 @@
+
+SQL*Loader: Release 18.0.0.0.0 - Production on Mié Sep 8 10:53:18 2021
+Version 18.4.0.0.0
+
+Copyright (c) 1982, 2019, Oracle and/or its affiliates.  All rights reserved.
+
+Archivo de Control:   control.ctl
+Juego de caracteres UTF8 especificado para todas las entradas.
+
+Archivo de Datos:      ../data/BlockbusterData.csv
+  Archivo de Errores:     BlockbusterData.bad
+  Desechar Archivo:  ninguno especificado
+ 
+ (Permitir todos los registros desechados)
+
+Número a cargar: ALL
+Número que omitir: 0
+Errores permitidos: 50
+Matriz de enlace:     250 filas, máximo de 1048576 bytes
+Continuación:    ninguno especificado
+Ruta de acceso utilizada:      Convencional
+
+Tabla TEMPORAL, cargada de cada registro lógico.
+Opción INSERT activa para esta tabla: INSERT
+
+   Nombre Columna                  Posición   Long  Term Entorno Tipo de Dato
+------------------------------ ---------- ----- ---- ---- ---------------------
+NOMBRE_CLIENTE                      FIRST     *   ;       CHARACTER            
+CORREO_CLIENTE                       NEXT     *   ;       CHARACTER            
+CLIENTE_ACTIVO                       NEXT     *   ;       CHARACTER            
+FECHA_CREACION                       NEXT     *   ;       CHARACTER            
+TIENDA_PREFERIDA                     NEXT     *   ;       CHARACTER            
+DIRECCION_CLIENTE                    NEXT     *   ;       CHARACTER            
+CODIGO_POSTAL_CLIENTE                NEXT     *   ;       CHARACTER            
+CIUDAD_CLIENTE                       NEXT     *   ;       CHARACTER            
+PAIS_CLIENTE                         NEXT     *   ;       CHARACTER            
+FECHA_RENTA                          NEXT     *   ;       CHARACTER            
+FECHA_RETORNO                        NEXT     *   ;       CHARACTER            
+MONTO_A_PAGAR                        NEXT     *   ;       CHARACTER            
+FECHA_PAGO                           NEXT     *   ;       CHARACTER            
+NOMBRE_EMPLEADO                      NEXT     *   ;       CHARACTER            
+CORREO_EMPLEADO                      NEXT     *   ;       CHARACTER            
+EMPLEADO_ACTIVO                      NEXT     *   ;       CHARACTER            
+TIENDA_EMPLEADO                      NEXT     *   ;       CHARACTER            
+USUARIO_EMPLEADO                     NEXT     *   ;       CHARACTER            
+CONTRASENIA_EMPLEADO                 NEXT     *   ;       CHARACTER            
+DIRECCION_EMPLEADO                   NEXT     *   ;       CHARACTER            
+CODIGO_POSTAL_EMPLEADO               NEXT     *   ;       CHARACTER            
+CIUDAD_EMPLEADO                      NEXT     *   ;       CHARACTER            
+PAIS_EMPLEADO                        NEXT     *   ;       CHARACTER            
+NOMBRE_TIENDA                        NEXT     *   ;       CHARACTER            
+ENCARGADO_TIENDA                     NEXT     *   ;       CHARACTER            
+DIRECCION_TIENDA                     NEXT     *   ;       CHARACTER            
+CODIGO_POSTAL_TIENDA                 NEXT     *   ;       CHARACTER            
+CIUDAD_TIENDA                        NEXT     *   ;       CHARACTER            
+PAIS_TIENDA                          NEXT     *   ;       CHARACTER            
+TIENDA_PELICULA                      NEXT     *   ;       CHARACTER            
+NOMBRE_PELICULA                      NEXT     *   ;       CHARACTER            
+DESCRIPCION_PELICULA                 NEXT     *   ;       CHARACTER            
+ANIO_LANZAMIENTO                     NEXT     *   ;       CHARACTER            
+DIAS_RENTA                           NEXT     *   ;       CHARACTER            
+COSTO_RENTA                          NEXT     *   ;       CHARACTER            
+DURACION                             NEXT     *   ;       CHARACTER            
+COSTO_POR_ANIO                       NEXT     *   ;       CHARACTER            
+CLASIFICACION                        NEXT     *   ;       CHARACTER            
+LENGUAJE_PELICULA                    NEXT     *   ;       CHARACTER            
+CATEGORIA_PELICULA                   NEXT     *   ;       CHARACTER            
+ACTOR_PELICULA                       NEXT     *   ;       CHARACTER            
+
+el valor utilizado para el parámetro ROWS ha cambiado de 250 a 99
+Registro 1: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88029: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88030: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88031: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88032: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88033: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88034: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88035: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88036: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88037: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88038: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88039: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88040: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88041: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88042: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88043: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88044: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88045: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88046: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88047: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88048: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88049: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88050: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88051: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88052: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88053: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88054: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88055: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88056: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88057: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88058: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88059: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88060: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88061: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88062: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88063: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88064: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88065: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88066: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88067: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88068: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88069: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88070: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88071: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88072: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88073: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88074: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88075: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88076: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88077: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+Registro 88078: Rechazado - Error en tabla TEMPORAL, columna DIAS_RENTA.
+ORA-01722: número no válido
+
+
+MÁXIMO DE ERRORES EXCEDIDO - Las estadísticas anteriores reflejan una ejecución parcial.
+
+Tabla TEMPORAL:
+  88027 Filas cargadas correctamente.
+  51 Filas no cargadas debido a errores de datos.
+  0 Filas no cargadas porque todas las cláusulas WHEN han fallado.
+  0 Filas no cargadas porque todos los campos eran nulos.
+
+
+Espacio asignado a matriz de enlace:          1047222 bytes (99 filas)
+Bytes de buffer de lectura: 1048576
+
+Total de registros lógicos omitidos:          0
+Total de registros lógicos leídos:       88098
+Total de registros lógicos rechazados:        51
+Total de registros lógicos desechados:        0
+
+La ejecución empezó en Mié Sep 08 10:53:18 2021
+La ejecución terminó en Mié Sep 08 11:06:57 2021
+
+Tiempo transcurrido:     00:13:39.05
+Tiempo de CPU:         00:00:04.37

@@ -1,0 +1,51 @@
+NOMBRE_CLIENTE;CORREO_CLIENTE;CLIENTE_ACTIVO;FECHA_CREACION;TIENDA_PREFERIDA;DIRECCION_CLIENTE;CODIGO_POSTAL_CLIENTE;CIUDAD_CLIENTE;PAIS_CLIENTE;FECHA_RENTA;FECHA_RETORNO;MONTO_A_PAGAR;FECHA_PAGO;NOMBRE_EMPLEADO;CORREO_EMPLEADO;EMPLEADO_ACTIVO;TIENDA_EMPLEADO;USUARIO_EMPLEADO;CONTRASEÑA_EMPLEADO;DIRECCION_EMPLEADO;CODIGO_POSTAL_EMPLEADO;CIUDAD_EMPLEADO;PAIS_EMPLEADO;NOMBRE_TIENDA;ENCARGADO_TIENDA;DIRECCION_TIENDA;CODIGO_POSTAL_TIENDA;CIUDAD_TIENDA;PAIS_TIENDA;TIENDA_PELICULA;NOMBRE_PELICULA;DESCRIPCION_PELICULA;AÑO_LANZAMIENTO;DIAS_RENTA;COSTO_RENTA;DURACION;COSTO_POR_DAÑO;CLASIFICACION;LENGUAJE_PELICULA;CATEGORIA_PELICULA;ACTOR_PELICULA
+-;-;-;-;-;-;-;London;Canada;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;23 Workhaven Lane;-;Lethbridge;Canada;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;47 Lou Fresco Drive;-;Lethbridge;Canada;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;1411 Lillydale Drive;-;Woodridge;Australia;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;28 Dannigaz Boulevard;-;Woodridge;Australia;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;1.99;18/06/2005 04:56;Mike Hillyer;mike.hillyer@yahoo.com;Si;Tienda 1;Mike;8cb2237d0679ca88db6464eac60da96345513964;23 Workhaven Lane;-;Lethbridge;Canada;Tienda 1;Mike Hillyer;47 Lou Fresco Drive;-;Lethbridge;Canada;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;1.99;23/08/2005 06:13;Jon Stephens;jon.stephens@yahoo.com;Si;Tienda 2;Jon;8cb2237d0679ca88db6464eac60da96345513964;1411 Lillydale Drive;-;Woodridge;Australia;Tienda 2;Jon Stephens;28 Dannigaz Boulevard;-;Woodridge;Australia;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;3.99;30/07/2005 21:16;Mike Hillyer;mike.hillyer@yahoo.com;Si;Tienda 1;Mike;8cb2237d0679ca88db6464eac60da96345513964;23 Workhaven Lane;-;Lethbridge;Canada;Tienda 1;Mike Hillyer;47 Lou Fresco Drive;-;Lethbridge;Canada;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;0.99;12/07/2005 06:26;Mike Hillyer;mike.hillyer@yahoo.com;Si;Tienda 1;Mike;8cb2237d0679ca88db6464eac60da96345513964;23 Workhaven Lane;-;Lethbridge;Canada;Tienda 1;Mike Hillyer;47 Lou Fresco Drive;-;Lethbridge;Canada;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1473 Changhwa Parkway;75933;Coacalco de Berriozbal;Mexico;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;659 Vaduz Drive;49708;Ashdod;Israel;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1006 Santa Brbara dOeste Manor;36229;Owo;Nigeria;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;544 Malm Parkway;63502;Pemalang;Indonesia;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1027 Banjul Place;50390;Halisahar;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;844 Bucuresti Place;36603;Jinzhou;China;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1013 Tabuk Boulevard;96203;Kanchrapara;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;207 Cuernavaca Loop;52671;Nabereznyje Telny;Russian Federation;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;775 ostka Drive;22358;Mit Ghamr;Egypt;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1947 Paarl Way;23636;Surakarta;Indonesia;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1679 Antofagasta Street;86599;Ciudad del Este;Paraguay;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1675 Xiangfan Manor;11763;Kumbakonam;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1501 Pangkal Pinang Avenue;943;Plock;Poland;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1895 Zhezqazghan Drive;36693;Garden Grove;United States;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1715 Okayama Street;55676;So Bernardo do Campo;Brazil;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1337 Lincoln Parkway;99457;Urawa;Japan;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;97 Mogiljov Lane;89294;Bhavnagar;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1760 Oshawa Manor;38140;Tianjin;China;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;331 Bydgoszcz Parkway;966;Gijn;Spain;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1107 Nakhon Sawan Avenue;75149;Nezahualcyotl;Mexico;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;682 Halisahar Place;20536;Olomouc;Czech Republic;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1766 Almirante Brown Street;63104;Newcastle;South Africa;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;454 Qinhuangdao Drive;25866;Beni-Mellal;Morocco;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1831 Nam Dinh Loop;51990;Mandaluyong;Philippines;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;913 Coacalco de Berriozbal Loop;42141;Arlington;United States;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;751 Lima Loop;99405;Aden;Yemen;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;614 Pak Kret Street;27796;Addis Abeba;Ethiopia;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1599 Plock Drive;71986;Tete;Mozambique;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;503 Sogamoso Loop;49812;Sumqayit;Azerbaijan;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;360 Toulouse Parkway;54308;Southend-on-Sea;United Kingdom;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;64 Korla Street;25145;Mwanza;Tanzania;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;981 Kumbakonam Place;87611;Braslia;Brazil;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;936 Salzburg Lane;96709;Rae Bareli;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;262 A Corua (La Corua) Parkway;34418;Tangail;Bangladesh;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;519 Nyeri Manor;37650;Santo Andr;Brazil;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;43 Dadu Avenue;4855;Bhilwara;India;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;28 Charlotte Amalie Street;37551;Sal;Morocco;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;261 Saint Louis Way;83401;Torren;Mexico;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1158 Mandi Bahauddin Parkway;98484;Datong;China;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;530 Lausanne Lane;11067;Dallas;United States;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
+-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;1133 Rizhao Avenue;2800;Vitria de Santo Anto;Brazil;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-;-
