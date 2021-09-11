@@ -1,3 +1,4 @@
+/*-------------consulta 1    --------------*/
 select pelicula.titulo as nombre, count(*) as cantidad
     from pelicula
     inner join renta_pelicula
@@ -79,4 +80,32 @@ select categoria.descripcion as Categoria, round(avg(pelicula.costo_danio - peli
     group by categoria.descripcion
     having avg(pelicula.costo_danio - pelicula.costo_renta) > 17;
 
+
+/*------------consulta 9 ----------------*/
+
+select pelicula.titulo, actor.nombre as nombre, actor.apeliido as apellido
+    from pelicula
+    inner join actor_pelicula
+        on pelicula.id_pelicula = actor_pelicula.id_pelicula
+    inner join actor
+        on actor_pelicula.id_actor = actor.id_actor
+    where actor.id_actor in (select actor_pelicula.id_actor from actor_pelicula group by actor_pelicula.id_actor 
+    having count(actor_pelicula.id_pelicula) >= 2);    /*-----5246------*/
+
+/*--------------------------consulta 10 ---------------------*/
+
+select Nombres || ' ' ||  Apellidos as Nombre_Completo
+    from ( select actor.nombre as Nombres, actor.apeliido as Apellidos from actor
+            UNION
+            select cliente.nombre as Nombres, cliente.apellido as Apellidos 
+            from cliente)  tabla1
+    inner join (select actor.nombre as nombre_actor,
+                actor.apeliido as apellido_actor
+                from actor 
+                where upper(actor.nombre||' '||actor.apeliido) like 'MATTHEW JOHANSSON')
+                tabla2 on Nombres = nombre_actor
+                where Apellidos <> apellido_actor;
+                
+/*------------consulta 11---------------*/
+    
     
