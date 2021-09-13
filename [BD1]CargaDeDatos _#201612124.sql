@@ -235,11 +235,14 @@ insert into Renta_Pelicula(precio,id_renta,id_pelicula)
                 and tienda.nombre = temporal.nombre_tienda
                 and cliente.nombre = SUBSTR(temporal.nombre_cliente, 1, INSTR(temporal.nombre_cliente, ' ') - 1)
                 and cliente.apellido = SUBSTR(temporal.nombre_cliente,INSTR(temporal.nombre_cliente, ' ') + 1)),
-                (
-                select id_pelicula from pelicula
-                where pelicula.titulo = temporal.nombre_pelicula) 
+                ( select id_pelicula from pelicula
+                where pelicula.titulo = temporal.nombre_pelicula
+                and pelicula.anio_lanzamiento = temporal.anio_lanzamiento
+                and pelicula.duracion = temporal.duracion) 
     from temporal
-    where temporal.nombre_cliente is not null;
+    where temporal.nombre_cliente != '-'
+    group by temporal.costo_renta,temporal.fecha_renta,temporal.fecha_retorno,temporal.fecha_pago,temporal.nombre_empleado,temporal.nombre_tienda,temporal.nombre_cliente,
+                temporal.nombre_pelicula,temporal.anio_lanzamiento,temporal.duracion;
     
-    
+delete from renta_pelicula;
 select *from renta_pelicula;
