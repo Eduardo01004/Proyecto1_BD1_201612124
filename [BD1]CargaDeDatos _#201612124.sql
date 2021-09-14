@@ -123,9 +123,9 @@ select *from clasificacion;
 insert into Lenguaje(nombre)
     select distinct temporal.lenguaje_pelicula
     from temporal
-    where temporal.lenguaje_pelicula is not null
+    where temporal.lenguaje_pelicula != '-'
     group  by temporal.lenguaje_pelicula;
-
+delete from lenguaje;
 select *from Lenguaje;
 
 insert into Categoria(descripcion)
@@ -192,7 +192,8 @@ insert into Lenguaje_Pelicula(id_lenguaje,id_pelicula)
         on lenguaje.nombre = temporal.lenguaje_pelicula
     inner join Pelicula
         on pelicula.titulo = temporal.nombre_pelicula
-            order by id_pelicula;
+            group by lenguaje.id_lenguaje,pelicula.id_pelicula;
+delete from lenguaje_pelicula;
 select *from lenguaje_pelicula;
 
 insert into Encargado_Tienda(id_empleado,id_tienda)

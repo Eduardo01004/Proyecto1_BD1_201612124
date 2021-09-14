@@ -130,43 +130,31 @@ select a1.nombre_pais,a1.nombre_cliente || ' ' || apellido_cliente as Nombre,(a1
    
 /*------------consulta 13 -------------------*/
 
-select a1.pais,a1.nombre,a1.apellido,a1.conteo from
-    (   select pais.nombre as pais,pais.id_pais as pp,cliente.nombre as nombre,cliente.apellido as apellido,renta_pelicula.id_pelicula as p1,
+select (select p1.nombre from pais p1 where p1.id_pais = pais.id_pais) as Pais,
+        (select c1.nombre || ' ' || c1.apellido from cliente c1 where c1.id_cliente = cliente.id_cliente) as nombre,
         count(renta_pelicula.id_pelicula) as conteo
-        from pais
+        from pais 
         inner join ciudad on pais.id_pais = ciudad.id_pais
         inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
         inner join cliente on direccion.id_direccion = cliente.id_direccion 
         inner join renta on cliente.id_cliente = renta.id_cliente
         inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
-        group by pais.nombre,pais.id_pais,cliente.nombre,cliente.apellido,renta_pelicula.id_pelicula) a1
-    inner join(
-        select pais.id_pais as p2,count(renta_pelicula.id_pelicula) as conteo
-        from pais
-        inner join ciudad on pais.id_pais = ciudad.id_pais
-        inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
-        inner join cliente on direccion.id_direccion = cliente.id_direccion 
-        inner join renta on cliente.id_cliente = renta.id_cliente
-        inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
-        group by pais.id_pais)a2
-        on a1.pp = a2.p2
-    inner join(
-        select pais.id_pais as p4,max(a3.conteo) 
-        from(
-            select cliente.nombre,cliente.apellido,pais.id_pais as p3,count(renta_pelicula.id_pelicula) as conteo
-            from pais
-            inner join ciudad on pais.id_pais = ciudad.id_pais
-            inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
-            inner join cliente on direccion.id_direccion = cliente.id_direccion 
-            inner join renta on cliente.id_cliente = renta.id_cliente
-            inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
-            group by cliente.nombre,cliente.apellido,pais.id_pais)a3 
-            group by a3.p3)a4
-            on max =a1.conteo
-            and pais.id_pais = a4.p4
-            order by pais.nombre;
-
-
+        group by pais.id_pais,cliente.id_cliente
+        
+        having count(renta_pelicula.id_pelicula) = (
+            select max(a1.conteo)
+            from (
+                select p.id_pais,cliente.id_cliente,count(renta_pelicula.id_pelicula) as conteo
+                from pais p
+                inner join ciudad on p.id_pais = ciudad.id_pais
+                inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
+                inner join cliente on direccion.id_direccion = cliente.id_direccion 
+                inner join renta on cliente.id_cliente = renta.id_cliente
+                inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+                where p.id_pais = pais.id_pais
+                group by p.id_pais,cliente.id_cliente
+                order by p.id_pais,cliente.id_cliente asc)a1)
+                order by pais.id_pais asc, count(renta_pelicula.id_pelicula) desc;
 /*------------consulta 14-----------*/
 select pais.nombre as pais,ciudad.nombre as ciudad,count(renta_pelicula.id_pelicula) as conteo
     from pais
@@ -253,6 +241,74 @@ SELECT ciudad.nombre as Ciudad, count(renta_pelicula.id_pelicula) as Rentas
                     
 /*-----------consulta 18----------------------*/
 
-select cliente.nombre,cliente.apellido,renta.fecha_devuelta
-    from renta
-    inner join 
+select a2.nombre,a2.apellido,renta.fecha_devuelta as Fecha
+from renta
+inner join(
+select renta.id_empleado as e1,renta.fecha_renta as fecha,round(sum(renta_pelicula.precio),2) as suma
+    from empleado
+    inner join renta on empleado.id_empleado = renta.id_empleado
+    inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+    group by renta.id_empleado,renta.fecha_renta
+    having round(sum(renta_pelicula.precio),2) > 15
+)a1 on fecha = renta.fecha_renta and a1.e1 = renta.id_empleado
+
+inner join (   
+select renta.id_cliente e2,cliente.nombre as nombre,cliente.apellido as apellido,renta.fecha_renta as fecha,count(renta_pelicula.id_pelicula) as conteo
+    from cliente
+        inner join renta on renta.id_cliente = cliente.id_cliente
+        inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+        inner join pelicula on renta_pelicula.id_pelicula = pelicula.id_pelicula
+        inner join lenguaje_pelicula on pelicula.id_pelicula = lenguaje_pelicula.id_pelicula
+        inner join lenguaje on lenguaje_pelicula.id_lenguaje = lenguaje.id_lenguaje
+            group by renta.id_cliente,cliente.nombre,cliente.apellido,renta.fecha_renta,lenguaje.nombre
+            having upper(lenguaje.nombre) like 'ENGLISH' and count(renta_pelicula.id_pelicula) > 2) a2 on a2.fecha = a1.fecha and a2.e2 = renta.id_cliente;
+    
+     
+/*------------consulta 19 ---------------*/
+
+select cliente.nombre,cliente.apellido,fecha,rentas
+    from cliente
+    inner join(
+        (select renta.id_cliente as ia,cliente.nombre as nombre,cliente.apellido as apellido,renta.fecha_renta, count(*) as rentas
+            from cliente
+            inner join renta on renta.id_cliente = cliente.id_cliente
+            inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+                group by renta.id_cliente,cliente.nombre,cliente.apellido,renta.fecha_renta
+                order by count(*) desc
+                OFFSET 1 ROWS FETCH NEXT 5 ROWS ONLY)
+        union
+        (select renta.id_cliente as ia,cliente.nombre as nombre,cliente.apellido as apellido,renta.fecha_renta, count(*) as rentas
+            from cliente
+            inner join renta on renta.id_cliente = cliente.id_cliente
+            inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+                group by renta.id_cliente,cliente.nombre,cliente.apellido,renta.fecha_renta
+                order by count(*) asc
+                OFFSET 1 ROWS FETCH NEXT 5 ROWS ONLY)
+        )a1 on cliente.id_cliente = ia;
+        
+/*----------------------consulta 20---------------------*/
+select a1.Ciudad,a1.Lenguaje, round((a1.conteo1/a2.conteo)*100,2) as Porcentaje,a1.fecha
+from (
+select pais.id_pais as p1,ciudad.nombre as Ciudad,lenguaje.nombre as Lenguaje,renta.fecha_renta as fecha, count(renta_pelicula.id_pelicula)  as conteo1
+    from pais
+        inner join ciudad on pais.id_pais = ciudad.id_pais
+        inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
+        inner join cliente on direccion.id_direccion = cliente.id_direccion 
+        inner join renta on cliente.id_cliente = renta.id_cliente
+        inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+        inner join pelicula on renta_pelicula.id_pelicula = pelicula.id_pelicula
+        inner join lenguaje_pelicula on pelicula.id_pelicula = lenguaje_pelicula.id_pelicula
+        inner join lenguaje on lenguaje_pelicula.id_lenguaje = lenguaje.id_lenguaje
+        group by pais.id_pais,ciudad.nombre,lenguaje.nombre,renta.fecha_renta
+        having upper(renta.fecha_renta) like '%07/2005%')a1
+inner join (
+select pais.id_pais as p2,count(renta_pelicula.id_pelicula) as conteo
+    from pais
+        inner join ciudad on pais.id_pais = ciudad.id_pais
+        inner join direccion on ciudad.id_ciudad = direccion.id_ciudad
+        inner join cliente on direccion.id_direccion = cliente.id_direccion 
+        inner join renta on cliente.id_cliente = renta.id_cliente
+        inner join renta_pelicula on renta.id_renta = renta_pelicula.id_renta
+        inner join pelicula on renta_pelicula.id_pelicula = pelicula.id_pelicula
+        group by pais.id_pais) a2 on a1.p1 = a2.p2 order by a1.Ciudad;
+        
