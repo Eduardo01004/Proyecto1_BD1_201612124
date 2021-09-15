@@ -128,6 +128,24 @@ select a1.nombre_pais,a1.nombre_cliente || ' ' || apellido_cliente as Nombre,(a1
     order by a1.conteo desc  
    OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
    
+/*-------------consulta 12--------------------*/
+select a1.ciudad,a1.pais,round(a1.conteo / (select count(cliente.id_cliente)
+                                from cliente
+                                inner join direccion on cliente.id_direccion = direccion.id_direccion
+                                inner join ciudad on direccion.id_ciudad = ciudad.id_ciudad
+                                inner join pais on ciudad.id_pais = pais.id_pais
+                                where pais.id_pais = a1.p1
+                                group by pais.id_pais)*100,2) || '%' as porcentaje
+    from (select ciudad.nombre as ciudad,pais.id_pais as p1,pais.nombre as pais,count(cliente.id_cliente) as conteo
+        from cliente
+        inner join direccion on cliente.id_direccion = direccion.id_direccion
+        inner join ciudad on direccion.id_ciudad = ciudad.id_ciudad
+        inner join pais on ciudad.id_pais = pais.id_pais
+        group by ciudad.nombre,pais.id_pais,pais.nombre
+        order by pais.nombre asc)a1
+        group by a1.ciudad,a1.pais,a1.conteo,a1.p1
+        order by a1.pais,a1.ciudad;
+   
 /*------------consulta 13 -------------------*/
 
 select (select p1.nombre from pais p1 where p1.id_pais = pais.id_pais) as Pais,
@@ -260,10 +278,10 @@ select renta.id_cliente e2,cliente.nombre as nombre,cliente.apellido as apellido
         inner join pelicula on renta_pelicula.id_pelicula = pelicula.id_pelicula
         inner join lenguaje_pelicula on pelicula.id_pelicula = lenguaje_pelicula.id_pelicula
         inner join lenguaje on lenguaje_pelicula.id_lenguaje = lenguaje.id_lenguaje
-            group by renta.id_cliente,cliente.nombre,cliente.apellido,renta.fecha_renta,lenguaje.nombre
-            having upper(lenguaje.nombre) like 'ENGLISH' and count(renta_pelicula.id_pelicula) > 2) a2 on a2.fecha = a1.fecha and a2.e2 = renta.id_cliente;
-    
-     
+            group by renta.id_cliente,cliente.nombre,cliente.apellido,renta.fecha_renta,lenguaje.nombre,lenguaje.id_lenguaje
+            having lenguaje.id_lenguaje = 41 and count(renta_pelicula.id_pelicula) > 2) a2 
+            on a2.fecha = a1.fecha and a2.e2 = renta.id_cliente;
+             
 /*------------consulta 19 ---------------*/
 
 select cliente.nombre,cliente.apellido,fecha,rentas
